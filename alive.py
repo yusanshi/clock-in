@@ -1,6 +1,6 @@
+#!/usr/bin/env python3
 import argparse
 import time
-import random
 from tqdm import trange
 from pynput.mouse import Controller
 
