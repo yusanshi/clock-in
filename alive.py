@@ -15,4 +15,4 @@ for i in trange(seconds, desc='Sleeping'):
     time.sleep(1)
 
     if i % 20 == 0:
-        mouse.position = (random.randrange(512), random.randrange(512))
+        mouse.scroll(0, 1)
