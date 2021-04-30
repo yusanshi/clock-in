@@ -1,9 +1,10 @@
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from time import sleep
 import requests
 import logging
 import argparse
+import os
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+from time import sleep
 
 
 def wait_for_success(condition, times=30, interval=0.2, **kwargs):
@@ -71,12 +72,14 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--username', type=str, required=True)
     parser.add_argument('--password', type=str, required=True)
-    parser.add_argument('--profile_directory', type=str, default='./profile')
     args = parser.parse_args()
+
+    profile_directory = os.path.join(
+        os.path.dirname(os.path.realpath(__file__)), 'profile')
 
     for _ in range(20):
         try:
-            clock_in(args.username, args.password, args.profile_directory)
+            clock_in(args.username, args.password, profile_directory)
             logging.info('Success')
             break
         except Exception as e:
