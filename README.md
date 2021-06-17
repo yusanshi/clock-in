@@ -1,5 +1,7 @@
 # clock-in
 
+**Disclaimer: For test only. Use at your own risk.**
+
 Clock-in script for JD.com.
 
 ## Environment
